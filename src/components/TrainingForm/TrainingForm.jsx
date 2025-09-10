@@ -1,20 +1,20 @@
 import './TrainingForm.css'
 
-function TrainingForm() {
+function TrainingForm({onSubmit}) {
 
     return (
-        <form className="training-form">
+        <form className="training-form" onSubmit={onSubmit}>
             <div className="date-wrapper">
-                <label htmlFor="date" className="date-label">
+                <label htmlFor="dateId" className="date-label">
                     Дата (ДД.ММ.ГГ)
                 </label>
-                <input type="text" name="date" className="date-input" />
+                <input type="date" name="date" id='dateId' className="date-input" required/>
             </div>
             <div className="distance-wrapper">
-                <label htmlFor="distance" className="distance-label">
+                <label htmlFor="distanceId" className="distance-label">
                     Пройдено км
                 </label>
-                <input type="text" name="distance" className="distance-input" />
+                <input type="text" name="distance" id='distanceId' className="distance-input" required/>
             </div>
             <button className="training-button">Ок</button>
         </form>
