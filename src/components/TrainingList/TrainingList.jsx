@@ -1,7 +1,7 @@
 import './TrainingList.css';
 import TrainingItem from '../TrainingItem/TrainingItem';
 
-function TrainingList({trainings}) {
+function TrainingList({trainings, onDelete, onEdit}) {
 
     return (
         <div className="training-list">
@@ -12,7 +12,7 @@ function TrainingList({trainings}) {
             </div>
             <div className="training-wrapper">
                 {trainings.map((training, trainingId) => (
-                    <TrainingItem training={training} key={trainingId}/>
+                    <TrainingItem training={training} key={trainingId} onDelete={onDelete}/>
                 ))}
             </div>
         </div>

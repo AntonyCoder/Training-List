@@ -1,3 +1,4 @@
+//Функция для валидации и корректировки даты при добавлении тренировки
 function validateForm(data) {
     const { date, distance } = data;
 
@@ -7,7 +8,7 @@ function validateForm(data) {
 
     const correctDate = date.split('-').reverse().join('.');
     
-    return {date: correctDate, distance}
+    return {date: correctDate, distance: Number(distance)}
 }
 
 export default validateForm;

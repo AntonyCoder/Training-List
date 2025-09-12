@@ -2,7 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import TrainingForm from './components/TrainingForm/TrainingForm';
 import TrainingList from './components/TrainingList/TrainingList';
-import validateForm from './helpers/validateForm'
+import validateForm from './helpers/validateForm';
+import updateTrainings from './helpers/updateTrainings';
 
 function App() {
   const [trainings, setTraining] = useState([]);
@@ -16,17 +17,20 @@ function App() {
     const validateData = validateForm(data);
 
     if (validateData) {
-      setTraining(prev => [...prev, validateData]);
+      setTraining(prev => updateTrainings(prev, validateData));
     }
 
     form.reset();
   }
 
+  function handleDelete(date) {
+    setTraining(prev => prev.filter(item => item.date !== date))
+  }
 
   return (
     <div className="app-wrapper">
       <TrainingForm onSubmit={handleSubmit} />
-      <TrainingList trainings={trainings} />
+      <TrainingList trainings={trainings} onDelete={handleDelete} />
     </div>
   )
 }

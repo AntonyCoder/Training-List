@@ -14,7 +14,7 @@ function TrainingForm({onSubmit}) {
                 <label htmlFor="distanceId" className="distance-label">
                     Пройдено км
                 </label>
-                <input type="text" name="distance" id='distanceId' className="distance-input" required/>
+                <input type="text" name="distance" id='distanceId' className="distance-input" required value={distance}/>
             </div>
             <button className="training-button">Ок</button>
         </form>

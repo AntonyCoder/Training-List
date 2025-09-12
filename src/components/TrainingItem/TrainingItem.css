@@ -5,3 +5,17 @@
 
     margin: 20px 0;
 }
+
+.actions-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.training-edit, .training-delete{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
